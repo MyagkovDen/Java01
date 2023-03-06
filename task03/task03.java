@@ -11,9 +11,12 @@ public class task03 {
         Scanner iScanner = new Scanner(System.in);
         System.out.print("Введите  a: ");
         int a = iScanner.nextInt();
-        System.out.print("Введите действие: ");
+        System.out.print("Введите операцию: ");
         // iScanner.nextLine();
         char act = iScanner.next().charAt(0);
+        if ((act != '+') && (act != '-') && (act != '*') && (act != '/')) {
+            System.out.println("Ошибка ввода операции!");
+        }
         System.out.print("Введите b: ");
         int b = iScanner.nextInt();
         iScanner.close();
@@ -30,9 +33,12 @@ public class task03 {
             int res = a * b;
             System.out.printf("%d %c %d = %d", a, act, b, res);
         }
-        if (act == '/') {
+        if ((act == '/') && (b != 0)){
             float res = (a * 1.0f / b);
             System.out.printf("%d %c %d = %f", a, act, b, res);
+        }
+        else {
+            System.out.println("Ошибка ввода! На 0 делить нельзя!");
         }
     }
 }
